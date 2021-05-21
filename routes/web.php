@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('events.home');
+//});
+Route::get('/', 'EventController@home')->name('index');
+Route::get('/about', 'EventController@about')->name('about');
+Route::get('/speakers', 'EventController@speakers')->name('speakers');
+Route::get('/schedule', 'EventController@schedule')->name('schedule');
+Route::get('/pricing', 'EventController@pricing')->name('pricing');
+Route::get('/blog', 'EventController@blog')->name('blog');
+Route::get('/contact', 'EventController@contact')->name('contact');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
